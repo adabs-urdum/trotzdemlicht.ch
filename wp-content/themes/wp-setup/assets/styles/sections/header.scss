@@ -5,23 +5,48 @@
 
   // define the styles of your component as designed
   .header {
-    margin: 0 auto $BS * 128;
+    position: relative;
+    margin: $BS*48 0 $BS*164;
     @include bsFontSize($BS, 22);
+    font-family: $FontFamilyBold;
 
     &__content {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      color: $White;
     }
 
-    &__mobileNavCheckbox,
-    &__mobileNavLabel {
-      display: none;
-      cursor: pointer;
+    &__nav {
+      display: flex;
+      align-items: center;
     }
 
-    &__menu {
-      ul {
-        display: flex;
+    &__logo {
+      color: $GoldLight;
+      text-align: center;
+      @include bsFontSize($BS, 36);
+      line-height: 140%;
+    }
+
+    &__logoWrapper {
+      margin: 0 $BS*80;
+    }
+
+    &__langSwitch {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      margin: 0;
+      transform: rotate(90deg) translateX(110%) translateY($BS*-76);
+      transform-origin: right top;
+
+      li {
+        padding: 0;
+
+        &:before {
+          content: none;
+        }
       }
     }
   }

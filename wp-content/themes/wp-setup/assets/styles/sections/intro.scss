@@ -1,0 +1,36 @@
+// Styles
+// name mixin after scss intro
+@mixin intro($type: "") {
+  // get Basesize in correct relation to design width
+  $BS: getBaseSize($type);
+
+  .intro {
+    color: $GoldLight;
+    min-height: $BS * 1300;
+
+    &__eyebrow {
+      color: $White;
+    }
+
+    &__title {
+      color: $White;
+    }
+
+    &__text {
+      width: $BS * 856;
+
+      @include bsFontSize($BS, 24);
+      line-height: 137%;
+    }
+  }
+}
+
+// Add intro
+@include intro();
+
+// Add basic intro with breakpoints
+@each $Breakpoint in $Breakpoints {
+  @include breakpoint(#{$Breakpoint}) {
+    @include intro(#{$Breakpoint});
+  }
+}

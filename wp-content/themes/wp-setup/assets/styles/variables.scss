@@ -1,13 +1,15 @@
-$FontFamilyMain: "Roboto Condensed",
-sans-serif;
+$FontFamilyMain: 'DM Serif Text',
+serif;
+$FontFamilyBold: 'DM Serif Display',
+serif;
 
 // Font Size set in <html>
-$BaseRemSize: 22;
+$BaseRemSize: 18;
 $RemSizeFactor: 1 / 16 * $BaseRemSize;
 
 // Width of Screendesign
-$ScreendesignWidth: 1980;
-$BreakpointMaxRelation: 1;
+$ScreendesignWidth: 1440;
+$BreakpointMaxRelation: 1.35;
 
 // Full viewportwidth divided by screendesign max width
 // Width of Screendesigns
@@ -65,9 +67,10 @@ screen and (height: 1024px,
 // Colors
 $White: #eeeeee;
 $Black: #333333;
-$Yellow: #ffb700;
-$YellowDark: #c68e00;
-$Blue: #0dcdff;
-$BlueDark: #1291b3;
-$Violet: #aa14cc;
-$VioletDark: #65067a;
+$Petrol: #2B5F63;
+$PetrolLight: #ACCCCE;
+$Gold: #E9BB66;
+$GoldLight: #F3DEBD;
+$Lila: #403D7A;
+$LilaLight: #9491CA;
+$BgColor: #F8F2E8;

@@ -3,13 +3,13 @@
 @import "mixins";
 @import "functions";
 
-$ColorLight: $Yellow;
-$ColorDark: $YellowDark;
+$ColorLight: $GoldLight;
+$ColorDark: $Petrol;
 $Black: $Black;
 $White: $White;
 $FontFamilyMain: $FontFamilyMain;
-$LogoTextAfter: "wp_setup.ch";
-$FormIntroText: "Custom Login";
+$LogoTextAfter: "trotzdemlicht.ch";
+$FormIntroText: "Login";
 
 // Blocks Editor
 // ----------------------------------------------------
@@ -351,7 +351,7 @@ textarea:focus {
 .components-button.is-primary:active:not(:disabled) {
   background: $ColorDark;
   border-color: $ColorDark;
-  color: $Yellow;
+  color: $ColorLight;
 }
 
 .components-button.edit-post-sidebar__panel-tab.is-active {

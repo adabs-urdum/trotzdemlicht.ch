@@ -11,19 +11,24 @@
   html {
     font-family: $FontFamilyMain;
     font-weight: 300;
+    min-height: 100%;
     // only set font-size here, if really needed
     // font-size: 16px;
     line-height: 143%;
-    color: $Black;
-    background-color: $Yellow;
+    color: $Petrol;
     scroll-behavior: smooth;
+    background: radial-gradient(circle at 0 0, $GoldLight, $Petrol $BS*1582, $BgColor 0), $BgColor;
+    background-repeat: no-repeat;
+
   }
 
   body {
+    position: relative;
     @include bsFontSize($BS, $BaseRemSize);
-    line-height: 143%;
+    line-height: 137%;
     max-width: $ScreendesignWidthMAX + 0px;
     margin: 0 auto;
+    padding: 0 $BS*146;
   }
 
   h1,
@@ -34,6 +39,7 @@
   h6 {
     line-height: 120%;
     font-weight: 700;
+    font-family: $FontFamilyBold;
 
     &:first-child {
       margin-top: 0;
@@ -45,24 +51,25 @@
   }
 
   h1 {
-    @include bsFontSize($BS, 62);
+    @include bsFontSize($BS, 100);
+    margin: $BS*40 0;
   }
 
   h2 {
-    @include bsFontSize($BS, 44);
+    @include bsFontSize($BS, 72);
   }
 
   h3 {
-    @include bsFontSize($BS, 36);
+    @include bsFontSize($BS, 48);
   }
 
   h4 {
-    @include bsFontSize($BS, 26);
+    @include bsFontSize($BS, 32);
   }
 
   h5,
   h6 {
-    @include bsFontSize($BS, 20);
+    @include bsFontSize($BS, 18);
   }
 
   input,
