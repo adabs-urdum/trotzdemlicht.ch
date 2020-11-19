@@ -42,10 +42,34 @@ function my_acf_block_types() {
         ]);
 
         acf_register_block_type([
-            'name'              => 'imgtxt',
-            'title'             => __('Text Bild Kombo'),
-            'description'       => __('Text Bild Kombo'),
-            'render_template'   => 'blocks/imgtxt.php',
+            'name'              => 'otherxmas',
+            'title'             => __('Andere Weihnachten'),
+            'description'       => __('Andere Weihnachten'),
+            'render_template'   => 'blocks/otherxmas.php',
+            'category'          => 'contentelements',
+            'icon'              => 'editor-alignleft',
+            'mode'              => 'preview',
+            'align'             => 'center',
+            'keywords'          => [],
+        ]);
+
+        acf_register_block_type([
+            'name'              => 'inspiration',
+            'title'             => __('Inspiration'),
+            'description'       => __('Inspiration'),
+            'render_template'   => 'blocks/inspiration.php',
+            'category'          => 'contentelements',
+            'icon'              => 'editor-alignleft',
+            'mode'              => 'preview',
+            'align'             => 'center',
+            'keywords'          => [],
+        ]);
+
+        acf_register_block_type([
+            'name'              => 'footer',
+            'title'             => __('Footer'),
+            'description'       => __('Footer'),
+            'render_template'   => 'blocks/footer.php',
             'category'          => 'contentelements',
             'icon'              => 'editor-alignleft',
             'mode'              => 'preview',
@@ -61,7 +85,9 @@ function allowed_block_types( $allowed_block_types, $post ) {
     return [
         'acf/intro',
         'acf/text',
-        'acf/imgtxt',
+        'acf/otherxmas',
+        'acf/inspiration',
+        'acf/footer',
     ];
 }
 add_filter( 'allowed_block_types', 'allowed_block_types', 10, 2 );

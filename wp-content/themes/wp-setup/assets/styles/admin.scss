@@ -51,6 +51,10 @@ button[aria-label="Ausrichtung ändern"] {
 
 .wp-core-ui .wp-block {
   @import "./components/button.scss";
+
+  .button {
+    padding: $BS * 9 $BS * 25;
+  }
 }
 
 .block-editor-block-contextual-toolbar-wrapper {

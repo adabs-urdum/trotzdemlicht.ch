@@ -6,7 +6,8 @@
   // define the styles of your component as designed
   .header {
     position: relative;
-    margin: $BS*48 0 $BS*164;
+    padding-top: $BS*48;
+    margin: 0 0 $BS*164;
     @include bsFontSize($BS, 22);
     font-family: $FontFamilyBold;
 
@@ -34,19 +35,44 @@
 
     &__langSwitch {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: $BS * 81;
+      right: $BS * 50;
       display: flex;
       margin: 0;
-      transform: rotate(90deg) translateX(110%) translateY($BS*-76);
+      transform: rotate(90deg) translateX(100%) translateY(0);
       transform-origin: right top;
+      z-index: 5;
 
       li {
         padding: 0;
+        margin-right: $BS * 30;
+
+        &:last-child {
+          margin-right: 0;
+        }
 
         &:before {
           content: none;
         }
+      }
+    }
+
+    &__anchor,
+    .lang-item a {
+      &:after {
+        height: 0;
+      }
+
+      &:hover {
+        &:after {
+          height: 40%;
+        }
+      }
+    }
+
+    .current-lang a {
+      &:after {
+        height: 40%;
       }
     }
   }
@@ -63,36 +89,106 @@
 }
 
 // Render custom styles with breakpoints
-@include breakPointXS() {
-  $BS: getBaseSize("XS");
+@include breakPointS() {
+  $BS: getBaseSize('S');
 
   .header {
+    padding-top: $BS*15;
+    margin-bottom: $BS*80;
+
+    &__logo {
+      color: $GoldLight;
+      text-align: center;
+      @include bsFontSize($BS, 36);
+      line-height: 140%;
+    }
+
+    &__logoWrapper {
+      margin: 0 $BS*80;
+    }
+
     &__nav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.5);
-      z-index: 90;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-out;
+      margin-top: $BS*30;
+      padding: 0 $BS*48;
+      text-align: center;
+      justify-content: center;
+      @include bsFontSize($BS, 12);
     }
 
-    &__mobileNavLabel {
+    &__content {
+      flex-direction: column-reverse;
+    }
+
+    &__langSwitch {
       position: relative;
-      display: block;
-      z-index: 100;
+      transform: rotate(0) translate(0, 0);
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      justify-content: center;
+      @include bsFontSize($BS, 9);
+      line-height: 100%;
+    }
+  }
+}
+
+@include breakPointS() {
+  $BS: getBaseSize('S');
+
+  .header {
+    padding-top: $BS*30;
+    margin-bottom: $BS*90;
+
+    &__logo {
+      @include bsFontSize($BS, 36);
+      line-height: 140%;
     }
 
-    &__mobileNavCheckbox {
-      &:checked {
-        &~.header {
-          &__nav {
-            transform: translateX(0);
-          }
-        }
-      }
+    &__logoWrapper {
+      margin: 0 $BS*30;
+    }
+
+    &__nav {
+      margin-top: $BS*60;
+      padding: 0 $BS*48;
+      @include bsFontSize($BS, 24);
+      line-height: 125%;
+    }
+
+    &__langSwitch {
+      @include bsFontSize($BS, 18);
+      line-height: 100%;
+    }
+  }
+}
+
+@include breakPointXS() {
+  $BS: getBaseSize('XS');
+
+  .header {
+    padding-top: $BS*15;
+    margin-bottom: $BS*90;
+
+    &__logo {
+      @include bsFontSize($BS, 18);
+      line-height: 140%;
+    }
+
+    &__logoWrapper {
+      margin: 0 $BS*30;
+    }
+
+    &__nav {
+      margin-top: $BS*30;
+      padding: 0 $BS*48;
+      @include bsFontSize($BS, 12);
+      line-height: 125%;
+    }
+
+    &__langSwitch {
+      @include bsFontSize($BS, 9);
+      line-height: 100%;
     }
   }
 }

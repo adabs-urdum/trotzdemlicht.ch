@@ -1,0 +1,175 @@
+// Styles
+// name mixin after scss otherxmas
+@mixin otherxmas($type: "") {
+  // get Basesize in correct relation to design width
+  $BS: getBaseSize($type);
+
+  .otherxmas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    // margin-bottom: $BS * 200;
+    margin: 0 $BS*146 $BS*200;
+
+    &__intro {
+      text-align: right;
+      width: $BS * 856;
+      @include bsFontSize($BS, 24);
+      line-height: 138%;
+      margin-bottom: $BS * 90;
+      max-width: 100%;
+    }
+
+    &__ideas {
+      width: 100%;
+    }
+
+    &__idea {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: $BS * 90;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+
+        .otherxmas {
+          &__txtWrapper {
+            text-align: left;
+            margin-left: 0;
+            margin-right: $BS * -130;
+          }
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__txtWrapper {
+      width: $BS * 564;
+      margin-left: $BS * -130;
+      text-align: right;
+    }
+
+    &__imgWrapper {
+      width: $BS * 564;
+      min-height: $BS * 564;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $White;
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+}
+
+// Add otherxmas
+@include otherxmas();
+
+// Add basic otherxmas with breakpoints
+@each $Breakpoint in $Breakpoints {
+  @include breakpoint(#{$Breakpoint}) {
+    @include otherxmas(#{$Breakpoint});
+  }
+}
+
+@include breakPointS() {
+  $BS: getBaseSize('S');
+
+  .otherxmas {
+    margin: 0 $BS*40 $BS*80;
+
+    .sectionLabel {
+      transform: rotate(-90deg) translateY(-100%);
+    }
+
+    &__intro {
+      @include bsFontSize($BS, 24);
+      line-height: 138%;
+      margin-bottom: $BS * 90;
+    }
+
+    &__idea {
+      position: relative;
+      justify-content: flex-end;
+
+      &:nth-child(even) {
+        .otherxmas {
+          &__imgWrapper {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    &__txtWrapper {
+      margin-top: $BS*50;
+      width: 80%;
+      margin-left: 0;
+    }
+
+    &__imgWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: $BS*256;
+      height: $BS*256;
+      min-height: 0;
+      z-index: -1;
+    }
+  }
+}
+
+@include breakPointXS() {
+  $BS: getBaseSize('XS');
+
+  .otherxmas {
+    padding: 0 $BS*40;
+    margin-bottom: $BS*80;
+
+    &__intro {
+      @include bsFontSize($BS, 12);
+      line-height: 138%;
+      margin-bottom: $BS * 90;
+    }
+
+    &__idea {
+      position: relative;
+      justify-content: flex-end;
+
+      &:nth-child(even) {
+        .otherxmas {
+          &__imgWrapper {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    &__txtWrapper {
+      margin-top: $BS*50;
+      width: $BS * 258;
+      margin-left: 0;
+    }
+
+    &__imgWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: $BS*147;
+      height: $BS*147;
+      min-height: 0;
+      z-index: -1;
+    }
+  }
+}

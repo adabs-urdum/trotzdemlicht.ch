@@ -16,11 +16,11 @@ $BreakpointMaxRelation: 1.35;
 $ScreendesignWidthMAX: $ScreendesignWidth * $BreakpointMaxRelation;
 $ScreendesignWidthL: 1440;
 $ScreendesignWidthM: 1024;
-$ScreendesignWidthS: 768;
+$ScreendesignWidthS: 750;
 $ScreendesignWidthXS: 375;
 $BreakpointLRelation: 1 / $ScreendesignWidthL * $ScreendesignWidth;
 $BreakpointMRelation: 1 / $ScreendesignWidthM * $ScreendesignWidth;
-$BreakpointSRelation: 1 / $ScreendesignWidthS * $ScreendesignWidth;
+$BreakpointSRelation: 1 / ($ScreendesignWidthXS * 2) * $ScreendesignWidth;
 $BreakpointXSRelation: 1 / $ScreendesignWidthXS * $ScreendesignWidth;
 
 // Full viewportwidth divided by screendesign max width

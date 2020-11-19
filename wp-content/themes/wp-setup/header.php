@@ -31,6 +31,7 @@ ga('create', 'UA-2092620-46', 'auto');
 </head>
 <body <?php body_class(); ?>>
 
+<span class="bgGradient"></span>
 
 <header class="header" id="header">
 
@@ -40,7 +41,7 @@ ga('create', 'UA-2092620-46', 'auto');
         <a href="#" class="header__anchor"><?= pll__('Andere Weihnachten') ?></a>
       </div>
       <div class="header__logoWrapper">
-        <h1 class="header__logo">Trotzdem<br /><?= pll__('Licht') ?></h1>
+        <h1 class="header__logo"><?= pll__('Trotzdem') ?><br /><?= pll__('Licht') ?></h1>
       </div>
       <div>
         <a href="#" class="header__anchor"><?= pll__('Inspiration & Links') ?></a>
