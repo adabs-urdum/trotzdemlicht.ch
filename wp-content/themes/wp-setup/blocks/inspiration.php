@@ -1,18 +1,22 @@
 <?php
   $videoID = get_field('video');
+  $showVideo = get_field('showVideo');
   $intro = get_field('intro');
   $links = get_field('links');
   $imgTxtCombo = get_field('imgTxtCombo');
 ?>
 
 <section id="inspiration" class="inspiration">
-  <div class="inspiration__videoWrapper">
-    <div class="inspiration__video">
-      <span class="sectionLabel sectionLabel--inspiration"><?= pll__('Inspiration & Links') ?></span>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $videoID ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <canvas width="16" height="9"></canvas>
+
+  <?php if($showVideo): ?>
+    <div class="inspiration__videoWrapper">
+      <div class="inspiration__video">
+        <span class="sectionLabel sectionLabel--inspiration"><?= pll__('Inspiration & Links') ?></span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $videoID ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <canvas width="16" height="9"></canvas>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
   <div class="inspiration__contentWrapper">
     <div class="inspiration__content">

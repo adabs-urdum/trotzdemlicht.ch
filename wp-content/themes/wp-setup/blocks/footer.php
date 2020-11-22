@@ -1,14 +1,15 @@
 <?php
   $sponsors = get_field('sponsors');
   $contact = get_field('contact');
-  $downloads = geT_field('downloads');
+  $downloads = get_field('downloads');
 ?>
 
 <footer class="footer">
   <div class="footer__sponsors">
-    <h5>Eine Aktion von:</h5>
+    <h5><?= pll__('Eine ökumenische Aktion') ?><br /><?= pll__('unter dem Patronat von:') ?></h5>
     <?php foreach($sponsors as $sponsor): ?>
       <?php
+        $text = $sponsor['description'];
         $img = $sponsor['logo'];
         $caption = $img['caption'];
         $src = $img['sizes']['L'];
@@ -19,6 +20,7 @@
 
         $link = $sponsor['link'];
       ?>
+      <p class="footer__description"><?= $text ?></p>
       <div class="footer__logo">
         <a href="<?= $link['url'] ?>">
           <img class="footer__img" loading="lazy" src="<?= $src ?>" title="<?= $imgTitle ?>" alt="<?= $alt ?>" srcset="<?= $srcset ?>" sizes="">
@@ -31,7 +33,7 @@
     <?= $contact ?>
   </div>
 
-  <div class="footer__downloads">
+  <div id="downloads" class="footer__downloads">
     <?= $downloads ?>
   </div>
 
@@ -54,6 +56,6 @@
   </div>
 
   <div class="footer__logoWrapper">
-    <h1 class="footer__logo"><?= pll__('Trotzdem') ?><br /><?= pll__('Licht') ?></h1>
+    <h1 class="footer__mainlogo"><?= pll__('Trotzdem') ?><br /><?= pll__('Licht') ?></h1>
   </div>
 </footer>

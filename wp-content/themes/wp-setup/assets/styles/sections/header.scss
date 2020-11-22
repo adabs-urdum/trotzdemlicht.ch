@@ -1,194 +1,199 @@
 // wrap your code in a mixin
 @mixin header($type: "") {
-  // get Basesize in correct relation to design width
-  $BS: getBaseSize($type);
-
-  // define the styles of your component as designed
-  .header {
-    position: relative;
-    padding-top: $BS*48;
-    margin: 0 0 $BS*164;
-    @include bsFontSize($BS, 22);
-    font-family: $FontFamilyBold;
-
-    &__content {
-      display: flex;
-      justify-content: center;
-      color: $White;
-    }
-
-    &__nav {
-      display: flex;
-      align-items: center;
-    }
-
-    &__logo {
-      color: $GoldLight;
-      text-align: center;
-      @include bsFontSize($BS, 36);
-      line-height: 140%;
-    }
-
-    &__logoWrapper {
-      margin: 0 $BS*80;
-    }
-
-    &__langSwitch {
-      position: absolute;
-      top: $BS * 81;
-      right: $BS * 50;
-      display: flex;
-      margin: 0;
-      transform: rotate(90deg) translateX(100%) translateY(0);
-      transform-origin: right top;
-      z-index: 5;
-
-      li {
-        padding: 0;
-        margin-right: $BS * 30;
-
-        &:last-child {
-          margin-right: 0;
+    // get Basesize in correct relation to design width
+    $BS: getBaseSize($type);
+    // define the styles of your component as designed
+    .header {
+        position: relative;
+        padding-top: $BS*48;
+        margin: 0 0 $BS*164;
+        @include bsFontSize($BS, 22);
+        font-family: $FontFamilyBold;
+        &__content {
+            display: flex;
+            justify-content: center;
+            color: $White;
         }
-
-        &:before {
-          content: none;
+        &__nav {
+            position: absolute;
+            display: flex;
+            align-items: center;
         }
-      }
-    }
-
-    &__anchor,
-    .lang-item a {
-      &:after {
-        height: 0;
-      }
-
-      &:hover {
-        &:after {
-          height: 40%;
+        &__navLink {
+            position: absolute;
+            &:first-child {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) translateX(-100%);
+            }
+            &:nth-child(3) {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%) translateX(100%);
+            }
+            &:nth-child(4) {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%) translateX(200%);
+            }
         }
-      }
+        &__logo {
+            color: $GoldLight;
+            text-align: center;
+            @include bsFontSize($BS, 36);
+            line-height: 140%;
+        }
+        &__logoWrapper {
+            margin: 0 $BS*80;
+        }
+        &__langSwitch {
+            position: absolute;
+            top: $BS * 81;
+            right: $BS * 50;
+            display: flex;
+            margin: 0;
+            transform: rotate(90deg) translateX(100%) translateY(0);
+            transform-origin: right top;
+            z-index: 5;
+            li {
+                padding: 0;
+                margin-right: $BS * 30;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:before {
+                    content: none;
+                }
+            }
+        }
+        &__anchor,
+        .lang-item a {
+            &:after {
+                height: 0;
+            }
+            &:hover {
+                &:after {
+                    height: 40%;
+                }
+            }
+        }
+        .current-lang a {
+            &:after {
+                height: 40%;
+            }
+        }
     }
-
-    .current-lang a {
-      &:after {
-        height: 40%;
-      }
-    }
-  }
 }
 
 // Render basic styles as designed
 @include header();
-
 // Render basic styles with breakpoints
 @each $Breakpoint in $Breakpoints {
-  @include breakpoint(#{$Breakpoint}) {
-    @include header(#{$Breakpoint});
-  }
+    @include breakpoint(#{$Breakpoint}) {
+        @include header(#{$Breakpoint});
+    }
 }
 
 // Render custom styles with breakpoints
 @include breakPointS() {
-  $BS: getBaseSize('S');
-
-  .header {
-    padding-top: $BS*15;
-    margin-bottom: $BS*80;
-
-    &__logo {
-      color: $GoldLight;
-      text-align: center;
-      @include bsFontSize($BS, 36);
-      line-height: 140%;
+    $BS: getBaseSize('S');
+    .header {
+        padding-top: $BS*15;
+        margin-bottom: $BS*80;
+        &__logo {
+            color: $GoldLight;
+            text-align: center;
+            @include bsFontSize($BS, 36);
+            line-height: 140%;
+        }
+        &__logoWrapper {
+            margin: 0 $BS*80;
+        }
+        &__nav {
+            max-width: $BS * 256;
+            position: relative;
+            flex-direction: column;
+            margin-top: $BS*30;
+            padding: 0 $BS*48;
+            text-align: center;
+            justify-content: center;
+            @include bsFontSize($BS, 12);
+        }
+        &__content {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        &__langSwitch {
+            position: relative;
+            transform: rotate(0) translate(0, 0);
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            justify-content: center;
+            @include bsFontSize($BS, 9);
+            line-height: 100%;
+        }
     }
-
-    &__logoWrapper {
-      margin: 0 $BS*80;
-    }
-
-    &__nav {
-      margin-top: $BS*30;
-      padding: 0 $BS*48;
-      text-align: center;
-      justify-content: center;
-      @include bsFontSize($BS, 12);
-    }
-
-    &__content {
-      flex-direction: column-reverse;
-    }
-
-    &__langSwitch {
-      position: relative;
-      transform: rotate(0) translate(0, 0);
-      top: auto;
-      left: auto;
-      right: auto;
-      bottom: auto;
-      justify-content: center;
-      @include bsFontSize($BS, 9);
-      line-height: 100%;
-    }
-  }
 }
 
 @include breakPointS() {
-  $BS: getBaseSize('S');
-
-  .header {
-    padding-top: $BS*30;
-    margin-bottom: $BS*90;
-
-    &__logo {
-      @include bsFontSize($BS, 36);
-      line-height: 140%;
+    $BS: getBaseSize('S');
+    .header {
+        padding-top: $BS*30;
+        margin-bottom: $BS*90;
+        &__logo {
+            @include bsFontSize($BS, 36);
+            line-height: 140%;
+        }
+        &__logoWrapper {
+            margin: 0 $BS*30;
+        }
+        &__nav {
+            margin-top: $BS*60;
+            padding: 0 $BS*48;
+            @include bsFontSize($BS, 24);
+            line-height: 125%;
+        }
+        &__navLink {
+            &:first-child {
+                transform: translateY(-50%) translateX(-100%);
+            }
+            &:nth-child(3) {
+                transform: translateY(-50%) translateX(100%);
+            }
+            &:nth-child(4) {
+                transform: translateY(-50%) translateX(180%);
+            }
+        }
+        &__langSwitch {
+            @include bsFontSize($BS, 18);
+            line-height: 100%;
+        }
     }
-
-    &__logoWrapper {
-      margin: 0 $BS*30;
-    }
-
-    &__nav {
-      margin-top: $BS*60;
-      padding: 0 $BS*48;
-      @include bsFontSize($BS, 24);
-      line-height: 125%;
-    }
-
-    &__langSwitch {
-      @include bsFontSize($BS, 18);
-      line-height: 100%;
-    }
-  }
 }
 
 @include breakPointXS() {
-  $BS: getBaseSize('XS');
-
-  .header {
-    padding-top: $BS*15;
-    margin-bottom: $BS*90;
-
-    &__logo {
-      @include bsFontSize($BS, 18);
-      line-height: 140%;
+    $BS: getBaseSize('XS');
+    .header {
+        padding-top: $BS*15;
+        margin-bottom: $BS*90;
+        &__logo {
+            @include bsFontSize($BS, 18);
+            line-height: 140%;
+        }
+        &__logoWrapper {
+            margin: 0 $BS*30;
+        }
+        &__nav {
+            margin-top: $BS*30;
+            padding: 0 $BS*48;
+            @include bsFontSize($BS, 12);
+            line-height: 125%;
+        }
+        &__langSwitch {
+            @include bsFontSize($BS, 9);
+            line-height: 100%;
+        }
     }
-
-    &__logoWrapper {
-      margin: 0 $BS*30;
-    }
-
-    &__nav {
-      margin-top: $BS*30;
-      padding: 0 $BS*48;
-      @include bsFontSize($BS, 12);
-      line-height: 125%;
-    }
-
-    &__langSwitch {
-      @include bsFontSize($BS, 9);
-      line-height: 100%;
-    }
-  }
 }

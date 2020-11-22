@@ -17,9 +17,12 @@
         }
         &__eyebrow {
             color: $White;
+            margin-bottom: 0;
         }
         &__title {
             color: $White;
+            margin-top: 0;
+            margin-bottom: $BS * 100;
         }
         &__text {
             width: $BS * 856;

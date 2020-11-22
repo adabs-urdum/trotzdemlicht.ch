@@ -13,8 +13,8 @@
 
 <section class="intro">
   <div class="intro__wrapper">
-    <h3 class="intro__eyebrow"><?= $eyebrow ?></h3>
-    <h1 class="intro__title"><?= $title ?></h1>
+    <h1 class="intro__eyebrow"><?= $eyebrow ?></h1>
+    <h3 class="intro__title"><?= $title ?></h3>
     <div class="intro__text">
       <?= $text ?>
     </div>

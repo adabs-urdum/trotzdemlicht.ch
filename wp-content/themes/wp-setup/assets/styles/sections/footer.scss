@@ -5,11 +5,11 @@
     $BS: getBaseSize($type);
     .footer {
         // background: $Gold;
-        background: radial-gradient(circle at bottom left, $GoldLight, $Petrol $BS * 1750, $Gold 0);
+        background: radial-gradient(circle at bottom left, $GoldLight, $Petrol $BS * 1800, $Gold 0);
         padding: $BS*220 $BS*146 0;
         color: $White;
         &__logo {
-            width: $BS * 418;
+            width: $BS * 330;
             max-width: 100%;
             margin-bottom: $BS * 55;
             &:last-child {
@@ -21,6 +21,10 @@
                 }
             }
         }
+        &__description {
+            @include bsFontSize($BS, 18);
+            line-height: 138%;
+        }
         &__downloads {
             margin-bottom: $BS*64;
         }
@@ -30,6 +34,9 @@
         }
         &__sponsors {
             margin-bottom: $BS * 90;
+            h5 {
+                line-height: 137.5%;
+            }
         }
         &__contact {
             margin-bottom: $BS * 64;
@@ -47,10 +54,11 @@
             justify-content: center;
             padding-bottom: $BS * 69;
         }
-        &__logo {
+        &__mainlogo {
             @include bsFontSize($BS, 36);
             line-height: 137.5%;
             color: $GoldLight;
+            text-align: center;
         }
         &__socialContainer {
             margin-bottom: $BS * 30;
