@@ -1,332 +1,286 @@
 // Styles
 // name mixin after scss inspiration
 @mixin inspiration($type: "") {
-  // get Basesize in correct relation to design width
-  $BS: getBaseSize($type);
-
-  .inspiration {
-    position: relative;
-    margin-top: $BS * 646;
-
-    &__videoWrapper {
-      position: relative;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: $Gold;
-        z-index: -1;
-      }
-    }
-
-    &__video {
-      position: relative;
-      margin: 0 auto;
-      width: $BS * 1148;
-      max-width: 100%;
-
-      iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      canvas {
-        width: 100%;
-      }
-    }
-
-    &__contentWrapper {
-      background: $Gold;
-    }
-
-    &__content {
-      width: $BS * 1148;
-      max-width: 100%;
-      margin: 0 auto;
-      padding-top: $BS * 200;
-      padding-bottom: $BS * 110;
-    }
-
-    &__intro {
-      width: $BS * 856;
-      max-width: 100%;
-      margin-bottom: $BS * 65;
-    }
-
-    &__row {
-      display: flex;
-      align-items: center;
-      margin-bottom: $BS * 50;
-    }
-
-    &__category {
-      position: relative;
-      margin-right: $BS * 60;
-      @include bsFontSize($BS, 72);
-      line-height: 137.5%;
-      z-index: 1;
-      cursor: pointer;
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: $BS * 36;
-        background: $PetrolLight;
-        z-index: -1;
-        transition: height 0.15s ease-out;
-      }
-
-      &:hover {
-        &:after {
-          height: 100%;
-        }
-      }
-    }
-
-    &__checkbox {
-      display: none;
-
-      &:checked {
-        &~.inspiration {
-          &__linklist {
-            opacity: 1;
-          }
-
-          &__category {
+    // get Basesize in correct relation to design width
+    $BS: getBaseSize($type);
+    .inspiration {
+        position: relative;
+        margin-top: $BS * 160;
+        &__videoWrapper {
+            position: relative;
             &:after {
-              height: 100%;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                background: $Gold;
+                z-index: -1;
             }
-          }
         }
-      }
+        &__video {
+            position: relative;
+            margin: 0 auto;
+            width: $BS * 1148;
+            max-width: 100%;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            canvas {
+                width: 100%;
+            }
+        }
+        &__contentWrapper {
+            background: $Gold;
+            background-image: radial-gradient(circle at right center, $BgColor, $Gold 60%);
+        }
+        &__content {
+            width: $BS * 1148;
+            max-width: 100%;
+            margin: 0 auto;
+            padding-top: $BS * 200;
+            padding-bottom: $BS * 110;
+        }
+        &__intro {
+            width: $BS * 856;
+            max-width: 100%;
+            margin-bottom: $BS * 65;
+        }
+        &__row {
+            display: flex;
+            align-items: center;
+            margin-bottom: $BS * 50;
+        }
+        &__category {
+            position: relative;
+            margin-right: $BS * 60;
+            @include bsFontSize($BS, 72);
+            line-height: 137.5%;
+            z-index: 1;
+            cursor: pointer;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: $BS * 36;
+                background: $PetrolLight;
+                z-index: -1;
+                transition: height 0.15s ease-out;
+            }
+            &:hover {
+                &:after {
+                    height: 100%;
+                }
+            }
+        }
+        &__checkbox {
+            display: none;
+            &:checked {
+                &~.inspiration {
+                    &__linklist {
+                        opacity: 1;
+                    }
+                    &__category {
+                        &:after {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &__links {
+            margin-bottom: $BS * 110;
+        }
+        &__linklist {
+            margin: 0;
+            display: flex;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        &__doubleWrapper {
+            margin-right: $BS * 30;
+        }
+        &__anchor {
+            display: flex;
+            @include bsFontSize($BS, 36);
+            line-height: 136%;
+            &:after {
+                background-color: $PetrolLight;
+                height: 0;
+            }
+            &:hover {
+                &:after {
+                    height: 36%;
+                }
+            }
+        }
+        &__iconWrapper {
+            position: relative;
+            margin-right: $BS * 14;
+            canvas {
+                width: $BS * 24;
+            }
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__imgTxtCombo {
+            position: relative;
+            display: flex;
+        }
+        &__comboImgWrapper {
+            width: $BS * 706;
+            min-height: $BS * 706;
+            background: $White;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__comboImg {
+            width: 100%;
+        }
+        &__comboTxtWrapper {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: right;
+        }
     }
-
-    &__links {
-      margin-bottom: $BS * 110;
-    }
-
-    &__linklist {
-      margin: 0;
-      display: flex;
-      opacity: 0;
-      transition: opacity 0.3s ease-out;
-    }
-
-    &__doubleWrapper {
-      margin-right: $BS * 30;
-    }
-
-    &__anchor {
-      display: flex;
-      @include bsFontSize($BS, 36);
-      line-height: 136%;
-    }
-
-    &__iconWrapper {
-      position: relative;
-      margin-right: $BS * 14;
-
-      canvas {
-        width: $BS * 24;
-      }
-
-      svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &__imgTxtCombo {
-      position: relative;
-      display: flex;
-    }
-
-    &__comboImgWrapper {
-      width: $BS * 706;
-      min-height: $BS * 706;
-      background: $White;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &__comboImg {
-      width: 100%;
-    }
-
-    &__comboTxtWrapper {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: right;
-    }
-  }
 }
 
 // Add inspiration
 @include inspiration();
-
 // Add basic inspiration with breakpoints
 @each $Breakpoint in $Breakpoints {
-  @include breakpoint(#{$Breakpoint}) {
-    @include inspiration(#{$Breakpoint});
-  }
+    @include breakpoint(#{$Breakpoint}) {
+        @include inspiration(#{$Breakpoint});
+    }
 }
 
 @include breakPointM() {
-  .inspiration {
-    &__content {
-      max-width: 80%;
+    .inspiration {
+        &__content {
+            max-width: 80%;
+        }
     }
-  }
 }
 
 @include breakPointS() {
-  $BS: getBaseSize('S');
-
-  .inspiration {
-    margin-top: $BS * 80;
-
-    &__videoWrapper {
-      padding: 0 $BS*40;
+    $BS: getBaseSize('S');
+    .inspiration {
+        margin-top: $BS * 80;
+        &__videoWrapper {
+            padding: 0 $BS*40;
+        }
+        &__content {
+            padding: $BS * 80 0;
+        }
+        &__intro {
+            margin-bottom: $BS * 60;
+        }
+        &__row {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: $BS*34;
+        }
+        &__links {
+            margin-bottom: 0;
+        }
+        &__linklist {
+            flex-direction: column;
+            opacity: 1;
+        }
+        &__doubleWrapper {
+            margin-right: 0;
+        }
+        &__category {
+            hyphens: auto;
+            margin-right: 0;
+            @include bsFontSize($BS, 72);
+            line-height: 137.5%;
+            &:after {
+                height: 0;
+            }
+        }
+        &__anchor {
+            display: flex;
+            @include bsFontSize($BS, 36);
+            line-height: 136%;
+        }
+        &__iconWrapper {
+            margin-right: $BS * 9.5;
+            canvas {
+                width: $BS * 12;
+            }
+        }
+        &__imgTxtCombo {
+            display: none;
+        }
     }
-
-    &__content {
-      padding: $BS * 80 0;
-    }
-
-    &__intro {
-      margin-bottom: $BS * 60;
-    }
-
-    &__row {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: $BS*34;
-    }
-
-    &__links {
-      margin-bottom: 0;
-    }
-
-    &__linklist {
-      flex-direction: column;
-      opacity: 1;
-    }
-
-    &__doubleWrapper {
-      margin-right: 0;
-    }
-
-    &__category {
-      hyphens: auto;
-      margin-right: 0;
-      @include bsFontSize($BS, 72);
-      line-height: 137.5%;
-
-      &:after {
-        height: 0;
-      }
-    }
-
-    &__anchor {
-      display: flex;
-      @include bsFontSize($BS, 36);
-      line-height: 136%;
-    }
-
-    &__iconWrapper {
-      margin-right: $BS * 9.5;
-
-      canvas {
-        width: $BS * 12;
-      }
-    }
-
-    &__imgTxtCombo {
-      display: none;
-    }
-  }
 }
 
 @include breakPointXS() {
-  $BS: getBaseSize('XS');
-
-  .inspiration {
-    margin-top: $BS * 80;
-
-    &__videoWrapper {
-      padding: 0 $BS*40;
+    $BS: getBaseSize('XS');
+    .inspiration {
+        margin-top: $BS * 80;
+        &__videoWrapper {
+            padding: 0 $BS*40;
+        }
+        &__content {
+            padding: $BS * 80 0;
+        }
+        &__intro {
+            margin-bottom: $BS * 60;
+        }
+        &__row {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: $BS*34;
+        }
+        &__links {
+            margin-bottom: 0;
+        }
+        &__linklist {
+            flex-direction: column;
+            opacity: 1;
+        }
+        &__doubleWrapper {
+            margin-right: 0;
+        }
+        &__category {
+            hyphens: auto;
+            margin-right: 0;
+            @include bsFontSize($BS, 36);
+            line-height: 137.5%;
+            &:after {
+                height: 0;
+            }
+        }
+        &__anchor {
+            display: flex;
+            @include bsFontSize($BS, 18);
+            line-height: 136%;
+        }
+        &__iconWrapper {
+            margin-right: $BS * 9.5;
+            canvas {
+                width: $BS * 12;
+            }
+        }
+        &__imgTxtCombo {
+            display: none;
+        }
     }
-
-    &__content {
-      padding: $BS * 80 0;
-    }
-
-    &__intro {
-      margin-bottom: $BS * 60;
-    }
-
-    &__row {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: $BS*34;
-    }
-
-    &__links {
-      margin-bottom: 0;
-    }
-
-    &__linklist {
-      flex-direction: column;
-      opacity: 1;
-    }
-
-    &__doubleWrapper {
-      margin-right: 0;
-    }
-
-    &__category {
-      hyphens: auto;
-      margin-right: 0;
-      @include bsFontSize($BS, 36);
-      line-height: 137.5%;
-
-      &:after {
-        height: 0;
-      }
-    }
-
-    &__anchor {
-      display: flex;
-      @include bsFontSize($BS, 18);
-      line-height: 136%;
-    }
-
-    &__iconWrapper {
-      margin-right: $BS * 9.5;
-
-      canvas {
-        width: $BS * 12;
-      }
-    }
-
-    &__imgTxtCombo {
-      display: none;
-    }
-  }
 }

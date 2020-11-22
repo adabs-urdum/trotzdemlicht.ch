@@ -5,7 +5,7 @@
   $imgTxtCombo = get_field('imgTxtCombo');
 ?>
 
-<section class="inspiration">
+<section id="inspiration" class="inspiration">
   <div class="inspiration__videoWrapper">
     <div class="inspiration__video">
       <span class="sectionLabel sectionLabel--inspiration"><?= pll__('Inspiration & Links') ?></span>

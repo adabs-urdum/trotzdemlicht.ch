@@ -1,66 +1,79 @@
 // Styles
 // name mixin after scss intro
 @mixin intro($type: "") {
-  // get Basesize in correct relation to design width
-  $BS: getBaseSize($type);
-
-  .intro {
-    color: $GoldLight;
-    min-height: $BS * 1300;
-    padding: 0 $BS*146;
-
-    &__eyebrow {
-      color: $White;
+    // get Basesize in correct relation to design width
+    $BS: getBaseSize($type);
+    .intro {
+        position: relative;
+        color: $GoldLight;
+        min-height: $BS * 1300;
+        padding: 0 $BS*146;
+        &__image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: $BS * 864;
+            z-index: -1;
+        }
+        &__eyebrow {
+            color: $White;
+        }
+        &__title {
+            color: $White;
+        }
+        &__text {
+            width: $BS * 856;
+            max-width: 100%;
+            @include bsFontSize($BS, 24);
+            line-height: 137%;
+        }
     }
-
-    &__title {
-      color: $White;
-    }
-
-    &__text {
-      width: $BS * 856;
-      max-width: 100%;
-
-      @include bsFontSize($BS, 24);
-      line-height: 137%;
-    }
-  }
 }
 
 // Add intro
 @include intro();
-
 // Add basic intro with breakpoints
 @each $Breakpoint in $Breakpoints {
-  @include breakpoint(#{$Breakpoint}) {
-    @include intro(#{$Breakpoint});
-  }
+    @include breakpoint(#{$Breakpoint}) {
+        @include intro(#{$Breakpoint});
+    }
+}
+
+@include breakPointM() {
+    $BS: getBaseSize('M');
+    .intro {
+        &__image {
+            width: $BS * 660;
+        }
+    }
 }
 
 @include breakPointS() {
-  $BS: getBaseSize('S');
-
-  .intro {
-    min-height: $BS * 900;
-    padding: 0 $BS*40;
-
-    &__text {
-      @include bsFontSize($BS, 24);
-      line-height: 125%;
+    $BS: getBaseSize('S');
+    .intro {
+        min-height: $BS * 900;
+        padding: 0 $BS*40;
+        &__text {
+            @include bsFontSize($BS, 24);
+            line-height: 125%;
+        }
+        &__image {
+            width: $BS * 600;
+        }
     }
-  }
 }
 
 @include breakPointXS() {
-  $BS: getBaseSize('XS');
-
-  .intro {
-    min-height: $BS * 800;
-    padding: 0 $BS*40;
-
-    &__text {
-      @include bsFontSize($BS, 12);
-      line-height: 125%;
+    $BS: getBaseSize('XS');
+    .intro {
+        min-height: $BS * 800;
+        padding: 0 $BS*40;
+        &__text {
+            @include bsFontSize($BS, 12);
+            line-height: 125%;
+        }
+        &__image {
+            width: $BS * 400;
+        }
     }
-  }
 }

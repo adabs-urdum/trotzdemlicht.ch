@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Really Simple SSL - Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-10-30 09:10:57+0000\n"
+"PO-Revision-Date: 2020-11-21 03:21:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #. Author of the plugin
 msgid "Really Simple Plugins"
-msgstr "Extensions Really Simple"
+msgstr "Really Simple Plugins"
 
 #: class-admin.php:3858
 msgid "Enable this option to dismiss the review notice."
@@ -89,7 +89,7 @@ msgstr "Votre site utiise Elementor. Cela peut ,écessiter quelques étapes supp
 
 #: class-admin.php:2727
 msgid "The mixed content fixer could not be detected due to a cURL error: %s. cURL errors are often caused by an outdated version of PHP or cURL and don't affect the front-end of your site. Contact your hosting provider for a fix. %sMore information about this warning%s"
-msgstr "Le fixateur de contenu mixte n’a pas pu être détecté en raison d’une erreur cURL : %s. Les erreurs cURL sont souvent causées par une version obsolète de PHP ou cURL et n’affectent pas l’interface publique de votre site. Contactez votre fournisseur d’hébergement pour un correctif. %sPlus d’information à propos de cet avertissement%s"
+msgstr "Le correcteur de contenu mixte n’a pas pu être détecté en raison d’une erreur cURL : %s. Les erreurs cURL sont souvent causées par une version obsolète de PHP ou cURL et n’affectent pas l’interface publique de votre site. Contactez votre fournisseur d’hébergement pour un correctif. %sPlus d’information à propos de cet avertissement%s"
 
 #: class-admin.php:2722
 msgid "Error occured when retrieving the webpage."
@@ -238,7 +238,7 @@ msgstr "(retour au http)"
 
 #: class-admin.php:3842
 msgid "Clicking this button will deactivate the plugin while keeping your site on SSL. The WordPress 301 redirect, Javascript redirect and mixed content fixer will stop working. The site address will remain https:// and the .htaccess redirect will remain active. Deactivating the plugin via the plugins overview will revert the site back to http://."
-msgstr "Cliquer sur ce bouton désactivera l’extension tout en gardant votre site sur SSL. La redirection WordPress 301, la redirection Javascript et le fixateur de contenu mixte cesseront de fonctionner. L’adresse du site restera https:// et la redirection .htaccess restera active. Si vous désactivez l’extension via la vue d’ensemble des extensions, le site reviendra à http://."
+msgstr "Cliquer sur ce bouton désactivera l’extension tout en gardant votre site sur SSL. La redirection WordPress 301, la redirection Javascript et le correcteur de contenu mixte cesseront de fonctionner. L’adresse du site restera https:// et la redirection .htaccess restera active. Si vous désactivez l’extension via la vue d’ensemble des extensions, le site reviendra à http://."
 
 #: class-admin.php:3837
 msgid "Cancel"
@@ -266,7 +266,7 @@ msgstr "* Les redirections WordPress 301 et Javascript cesseront de fonctionner.
 
 #: class-admin.php:3816
 msgid "* The mixed content fixer will stop working"
-msgstr "* Le fixateur de contenu mixte cessera de fonctionner"
+msgstr "* Le correcteur de contenu mixte cessera de fonctionner"
 
 #: class-admin.php:3814
 msgid "Deactivating the plugin while keeping SSL will do the following:"
@@ -330,7 +330,7 @@ msgstr "N’oubliez pas de modifier vos réglages dans Google Analytics et Webma
 
 #: class-admin.php:3762
 msgid "If this option is set to true, the mixed content fixer will fire on the init hook instead of the template_redirect hook. Only use this option when you experience problems with the mixed content fixer."
-msgstr "Si cette option est définie à oui, le fixateur de contenu mixte tirera sur le crochet d’inactivité au lieu du crochet template_redirect. Utilisez uniquement cette option lorsque vous rencontrez des problèmes avec le fixateur de contenu mixte."
+msgstr "Si cette option est définie à oui, le correcteur de contenu mixte tirera sur le crochet d’inactivité au lieu du crochet template_redirect. Utilisez uniquement cette option lorsque vous rencontrez des problèmes avec le correcteur de contenu mixte."
 
 #: class-admin.php:3701
 msgid "The plugin could not detect any possible redirect rule."
@@ -539,7 +539,7 @@ msgstr "Choisissez votre configuration préférée"
 
 #: class-admin.php:2693
 msgid "SSL is not enabled yet"
-msgstr "Le SSL n&rsquo;est pas encore activé"
+msgstr "Le SSL n’est pas encore activé"
 
 #: class-admin.php:2689
 msgid "SSL is enabled on your site."
@@ -667,7 +667,7 @@ msgstr "Configuration"
 
 #: class-admin.php:3422
 msgid "Mixed content fixer"
-msgstr "Fixateur de contenu mixte"
+msgstr "Correcteur de contenu mixte"
 
 #: class-admin.php:3052
 msgid "Detected setup"

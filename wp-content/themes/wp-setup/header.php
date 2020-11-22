@@ -38,13 +38,13 @@ ga('create', 'UA-2092620-46', 'auto');
   <div class="header__content">
     <nav class="header__nav">
       <div>
-        <a href="#" class="header__anchor"><?= pll__('Andere Weihnachten') ?></a>
+        <a href="#otherxmas" class="header__anchor"><?= pll__('Andere Weihnachten') ?></a>
       </div>
       <div class="header__logoWrapper">
         <h1 class="header__logo"><?= pll__('Trotzdem') ?><br /><?= pll__('Licht') ?></h1>
       </div>
       <div>
-        <a href="#" class="header__anchor"><?= pll__('Inspiration & Links') ?></a>
+        <a href="#inspiration" class="header__anchor"><?= pll__('Inspiration & Links') ?></a>
       </div>
     </nav>
     <ul class="header__langSwitch">

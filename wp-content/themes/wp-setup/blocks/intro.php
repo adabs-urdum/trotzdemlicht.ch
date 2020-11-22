@@ -2,6 +2,13 @@
   $eyebrow = get_field('eyebrow');
   $text = get_field( 'text' );
   $title = get_field( 'title' );
+  $img = get_field('image');
+  $caption = $img['caption'];
+  $src = $img['sizes']['L'];
+  $srcset = wp_get_attachment_image_srcset($img['ID']);
+  $alt = $img['alt'] ? $img['alt'] : $img['name'];
+  $imgTitle = $img['title'] ? $img['title'] : $img['name'];
+  $srcset = wp_get_attachment_image_srcset($img['ID']);
 ?>
 
 <section class="intro">
@@ -12,4 +19,5 @@
       <?= $text ?>
     </div>
   </div>
+  <img class="intro__image" loading="lazy" src="<?= $src ?>" title="<?= $imgTitle ?>" alt="<?= $alt ?>" srcset="<?= $srcset ?>" sizes="">
 </section>
