@@ -4,7 +4,7 @@
 ?>
 
 <section class="otherxmas">
-  <span id="otherxmas" class="sectionLabel"><?= pll__('Andere Weihnachten') ?></span>
+  <span id="otherxmas" class="sectionLabel"><?= pll__('Einfach anders') ?></span>
   <div class="otherxmas__intro">
     <?= $intro ?>
   </div>

@@ -11,7 +11,6 @@
   <?php if($showVideo): ?>
     <div class="inspiration__videoWrapper">
       <div class="inspiration__video">
-        <span class="sectionLabel sectionLabel--inspiration"><?= pll__('Inspiration & Links') ?></span>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $videoID ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <canvas width="16" height="9"></canvas>
       </div>
@@ -20,6 +19,7 @@
 
   <div class="inspiration__contentWrapper">
     <div class="inspiration__content">
+      <span class="sectionLabel sectionLabel--inspiration"><?= pll__('Inspiration & Links') ?></span>
       <div class="inspiration__intro">
         <?= $intro ?>
       </div>

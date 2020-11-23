@@ -40,6 +40,7 @@
             background-image: radial-gradient(circle at right center, $BgColor, $Gold 60%);
         }
         &__content {
+            position: relative;
             width: $BS * 1148;
             max-width: 100%;
             margin: 0 auto;

@@ -1,385 +1,320 @@
 // Styles
 // name mixin after scss component
 @mixin styles($type: "") {
-  // get Basesize in correct relation to design width
-  $BS: getBaseSize($type);
-
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    font-family: $FontFamilyMain;
-    font-weight: 300;
-    min-height: 100%;
-    // only set font-size here, if really needed
-    // font-size: 16px;
-    line-height: 143%;
-    color: $Petrol;
-    scroll-behavior: smooth;
-    background: $BgColor;
-    overflow-x: hidden;
-  }
-
-  body {
-    position: relative;
-    @include bsFontSize($BS, $BaseRemSize);
-    line-height: 137%;
-    max-width: $ScreendesignWidthMAX + 0px;
-    margin: 0 auto;
-  }
-
-  .bgGradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $BS * 3164;
-    height: $BS * 3164;
-    background: radial-gradient(circle at center, $GoldLight, $Petrol $BS*1582, $BgColor 0);
-    background-repeat: no-repeat;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-
-    &--footer {
-      top: auto;
-      bottom: 0;
-      transform: translate(-50%, 50%);
+    // get Basesize in correct relation to design width
+    $BS: getBaseSize($type);
+    * {
+        box-sizing: border-box;
     }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 120%;
-    font-weight: 700;
-    font-family: $FontFamilyBold;
-
-    &:first-child {
-      margin-top: 0;
+    html {
+        font-family: $FontFamilyMain;
+        font-weight: 300;
+        min-height: 100%;
+        // only set font-size here, if really needed
+        // font-size: 16px;
+        line-height: 143%;
+        color: $Petrol;
+        scroll-behavior: smooth;
+        background: $BgColor;
+        overflow-x: hidden;
     }
-
-    &:last-child {
-      margin-bottom: 0;
+    body {
+        position: relative;
+        @include bsFontSize($BS, $BaseRemSize);
+        line-height: 137%;
+        max-width: $ScreendesignWidthMAX + 0px;
+        margin: 0 auto;
     }
-  }
-
-  h1 {
-    @include bsFontSize($BS, 100);
-    margin: $BS*40 0;
-  }
-
-  h2 {
-    @include bsFontSize($BS, 72);
-  }
-
-  h3 {
-    @include bsFontSize($BS, 48);
-    font-weight: 400;
-    font-family: $FontFamilyMain;
-  }
-
-  h4 {
-    @include bsFontSize($BS, 32);
-  }
-
-  h5 {
-    @include bsFontSize($BS, 24);
-  }
-
-  h6 {
-    @include bsFontSize($BS, 18);
-  }
-
-  input,
-  button {
-    font-family: $FontFamilyMain;
-  }
-
-  p {
-    padding: 0;
-
-    &:first-child {
-      margin-top: 0;
+    .bgGradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $BS * 3164;
+        height: $BS * 3164;
+        background: radial-gradient(circle at center, $GoldLight, $Petrol $BS*1582, $BgColor 0);
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        &--footer {
+            top: auto;
+            bottom: 0;
+            transform: translate(-50%, 50%);
+        }
     }
-
-    &:last-child {
-      margin-bottom: 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 120%;
+        font-weight: 700;
+        font-family: $FontFamilyBold;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
-  }
-
-  ul,
-  li {
-    padding: 0;
-    list-style: none;
-
-    &:first-child {
-      margin-top: 0;
+    h1 {
+        @include bsFontSize($BS, 100);
+        margin: $BS*40 0;
     }
-
-    &:last-child {
-      margin-bottom: 0;
+    h2 {
+        @include bsFontSize($BS, 72);
     }
-  }
-
-  li {
-    // position: relative;
-    padding-left: $BS * 20;
-
-    &:before {
-      content: "\2022";
-      margin-left: $BS * -20;
-      margin-right: $BS * 10;
-      font-size: 110%;
-      line-height: 50%;
+    h3 {
+        @include bsFontSize($BS, 48);
+        font-weight: 400;
+        font-family: $FontFamilyMain;
     }
-  }
-
-  a {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-    z-index: 1;
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 40%;
-      background: $Gold;
-      z-index: -1;
-      transition: height 0.15s ease-out;
+    h4 {
+        @include bsFontSize($BS, 32);
     }
-
-    &:hover {
-      &:after {
-        height: 100%;
-      }
+    h5 {
+        @include bsFontSize($BS, 24);
     }
-
-    &:active {}
-  }
-
-  code {
-    display: block;
-    background-color: $Black;
-    color: $White;
-    border-radius: $BS * 2;
-    padding: $BS * 14 $BS * 16 $BS * 16;
-    margin: $BS * 16 0;
-  }
-
-  button {
-    cursor: pointer;
-    color: inherit;
-    font-family: inherit;
-    background: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    border: none;
-    text-align: inherit;
-  }
-
-  img,
-  canvas {
-    display: block;
-  }
-
-  strong {
-    font-weight: 700;
-  }
-
-  .mobile_only {
-    display: none;
-  }
-
-  .desktop_only {
-    display: block;
-  }
-
-  .sectionLabel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotate(-90deg) translateY(calc(100% - #{$BS} * 92)) translateX($BS * -20);
-    transform-origin: left top;
-    color: $PetrolLight;
-    @include bsFontSize($BS, 24);
-    line-height: 100%;
-
-    &--inspiration {
-      color: $Petrol;
-      left: auto;
-      right: 0;
-      top: 50%;
-      transform: rotate(90deg) translateY(calc(-100% - #{$BS} * 69)) translateX(50%);
-      transform-origin: right top;
-      z-index: 500;
+    h6 {
+        @include bsFontSize($BS, 18);
     }
-  }
+    input,
+    button {
+        font-family: $FontFamilyMain;
+    }
+    p {
+        padding: 0;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    ul,
+    li {
+        padding: 0;
+        list-style: none;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    li {
+        // position: relative;
+        padding-left: $BS * 20;
+        &:before {
+            content: "\2022";
+            margin-left: $BS * -20;
+            margin-right: $BS * 10;
+            font-size: 110%;
+            line-height: 50%;
+        }
+    }
+    a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+        z-index: 1;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 40%;
+            background: $Gold;
+            z-index: -1;
+            transition: height 0.15s ease-out;
+        }
+        &:hover {
+            &:after {
+                height: 100%;
+            }
+        }
+        &:active {}
+    }
+    code {
+        display: block;
+        background-color: $Black;
+        color: $White;
+        border-radius: $BS * 2;
+        padding: $BS * 14 $BS * 16 $BS * 16;
+        margin: $BS * 16 0;
+    }
+    button {
+        cursor: pointer;
+        color: inherit;
+        font-family: inherit;
+        background: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+        text-align: inherit;
+    }
+    img,
+    canvas {
+        display: block;
+    }
+    strong {
+        font-weight: 700;
+    }
+    .mobile_only {
+        display: none;
+    }
+    .desktop_only {
+        display: block;
+    }
+    .sectionLabel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg) translateY(calc(100% - #{$BS} * 92)) translateX($BS * -20);
+        transform-origin: left top;
+        color: $PetrolLight;
+        @include bsFontSize($BS, 24);
+        line-height: 100%;
+        &--inspiration {
+            color: $Petrol;
+            left: auto;
+            right: 0;
+            transform: rotate(90deg) translateY(calc(#{$BS} * -69)) translateX(calc(100% + #{$BS} * 200));
+            transform-origin: right top;
+            z-index: 500;
+        }
+    }
 }
 
 // Add styles
 @include styles();
-
 // Add basic styles with breakpoints
 @each $Breakpoint in $Breakpoints {
-  @include breakpoint(#{$Breakpoint}) {
-    @include styles(#{$Breakpoint});
-  }
+    @include breakpoint(#{$Breakpoint}) {
+        @include styles(#{$Breakpoint});
+    }
 }
 
 // Add custom styles with breakpoints
 @include breakPointS() {
-  $BS: getBaseSize('S');
-
-  body {
-    @include bsFontSize($BS, 20);
-    line-height: 137%;
-  }
-
-  .bgGradient {
-    width: $BS * 2400;
-    height: $BS * 2400;
-    background: radial-gradient(circle at center, $GoldLight, $Petrol $BS*1060, $BgColor 0);
-  }
-
-  h1 {
-    @include bsFontSize($BS, 50);
-    margin: $BS*16 0;
-  }
-
-  h2 {
-    @include bsFontSize($BS, 32);
-  }
-
-  h3 {
-    @include bsFontSize($BS, 32);
-    font-weight: 400;
-    font-family: $FontFamilyMain;
-    margin-bottom: $BS*16;
-  }
-
-  h4 {
-    @include bsFontSize($BS, 20);
-  }
-
-  h5 {
-    @include bsFontSize($BS, 18);
-  }
-
-  h6 {
-    @include bsFontSize($BS, 16);
-  }
-
-  li {
-    // position: relative;
-    padding-left: $BS * 20;
-
-    &:before {
-      content: "\2022";
-      margin-left: $BS * -20;
-      margin-right: $BS * 10;
-      font-size: 110%;
-      line-height: 50%;
+    $BS: getBaseSize('S');
+    body {
+        @include bsFontSize($BS, 20);
+        line-height: 137%;
     }
-  }
-
-  .sectionLabel {
-    transform: rotate(-90deg) translateY(calc(100% - #{$BS} * 92)) translateX($BS * -20);
-    @include bsFontSize($BS, 24);
-    line-height: 100%;
-
-    &--inspiration {
-      transform: rotate(90deg) translateY(calc(-100% - #{$BS} * 69)) translateX(50%);
+    .bgGradient {
+        width: $BS * 2400;
+        height: $BS * 2400;
+        background: radial-gradient(circle at center, $GoldLight, $Petrol $BS*1060, $BgColor 0);
     }
-  }
-
-  .mobile_only {
-    display: block;
-  }
-
-  .desktop_only {
-    display: none;
-  }
+    h1 {
+        @include bsFontSize($BS, 50);
+        margin: $BS*16 0;
+    }
+    h2 {
+        @include bsFontSize($BS, 32);
+    }
+    h3 {
+        @include bsFontSize($BS, 32);
+        font-weight: 400;
+        font-family: $FontFamilyMain;
+        margin-bottom: $BS*16;
+    }
+    h4 {
+        @include bsFontSize($BS, 20);
+    }
+    h5 {
+        @include bsFontSize($BS, 18);
+    }
+    h6 {
+        @include bsFontSize($BS, 16);
+    }
+    li {
+        // position: relative;
+        padding-left: $BS * 20;
+        &:before {
+            content: "\2022";
+            margin-left: $BS * -20;
+            margin-right: $BS * 10;
+            font-size: 110%;
+            line-height: 50%;
+        }
+    }
+    .sectionLabel {
+        transform: rotate(-90deg) translateY(calc(100% - #{$BS} * 92)) translateX($BS * -20);
+        @include bsFontSize($BS, 24);
+        line-height: 100%;
+        &--inspiration {
+            transform: rotate(90deg) translateY(calc(#{$BS} * -69)) translateX(calc(100% + #{$BS} * 80));
+        }
+    }
+    .mobile_only {
+        display: block;
+    }
+    .desktop_only {
+        display: none;
+    }
 }
 
 @include breakPointXS() {
-  $BS: getBaseSize('XS');
-
-  body {
-    @include bsFontSize($BS, 10);
-    line-height: 137%;
-  }
-
-  .bgGradient {
-    width: $BS * 1620;
-    height: $BS * 1620;
-    background: radial-gradient(circle at center, $GoldLight, $Petrol $BS*810, $BgColor 0);
-  }
-
-  h1 {
-    @include bsFontSize($BS, 50);
-    margin: $BS*16 0;
-  }
-
-  h2 {
-    @include bsFontSize($BS, 32);
-  }
-
-  h3 {
-    @include bsFontSize($BS, 24);
-    font-weight: 400;
-    font-family: $FontFamilyMain;
-    margin-bottom: $BS*16;
-  }
-
-  h4 {
-    @include bsFontSize($BS, 20);
-  }
-
-  h5 {
-    @include bsFontSize($BS, 18);
-  }
-
-  h6 {
-    @include bsFontSize($BS, 16);
-  }
-
-  li {
-    // position: relative;
-    padding-left: $BS * 20;
-
-    &:before {
-      content: "\2022";
-      margin-left: $BS * -20;
-      margin-right: $BS * 10;
-      font-size: 110%;
-      line-height: 50%;
+    $BS: getBaseSize('XS');
+    body {
+        @include bsFontSize($BS, 10);
+        line-height: 137%;
     }
-  }
-
-  .sectionLabel {
-    transform: rotate(-90deg) translateY(calc(100% - #{$BS} * 92)) translateX($BS * -20);
-    @include bsFontSize($BS, 12);
-    line-height: 100%;
-
-    &--inspiration {
-      transform: rotate(90deg) translateY(calc(-100% - #{$BS} * 69)) translateX(50%);
+    .bgGradient {
+        width: $BS * 1750;
+        height: $BS * 1750;
+        background: radial-gradient(circle at center, $GoldLight, $Petrol $BS*850, $BgColor 0);
     }
-  }
-
-  .mobile_only {
-    display: block;
-  }
-
-  .desktop_only {
-    display: none;
-  }
+    h1 {
+        @include bsFontSize($BS, 50);
+        margin: $BS*16 0;
+    }
+    h2 {
+        @include bsFontSize($BS, 32);
+    }
+    h3 {
+        @include bsFontSize($BS, 24);
+        font-weight: 400;
+        font-family: $FontFamilyMain;
+        margin-bottom: $BS*16;
+    }
+    h4 {
+        @include bsFontSize($BS, 20);
+    }
+    h5 {
+        @include bsFontSize($BS, 18);
+    }
+    h6 {
+        @include bsFontSize($BS, 16);
+    }
+    li {
+        // position: relative;
+        padding-left: $BS * 20;
+        &:before {
+            content: "\2022";
+            margin-left: $BS * -20;
+            margin-right: $BS * 10;
+            font-size: 110%;
+            line-height: 50%;
+        }
+    }
+    .sectionLabel {
+        transform: rotate(-90deg) translateY(calc(100% - #{$BS} * 92)) translateX($BS * -20);
+        @include bsFontSize($BS, 12);
+        line-height: 100%;
+        &--inspiration {
+            transform: rotate(90deg) translateY(calc(-100% - #{$BS} * 69)) translateX(50%);
+        }
+    }
+    .mobile_only {
+        display: block;
+    }
+    .desktop_only {
+        display: none;
+    }
 }
