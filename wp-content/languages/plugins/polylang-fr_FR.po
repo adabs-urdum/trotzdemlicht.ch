@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Polylang - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-08-18 21:22:48+0000\n"
+"PO-Revision-Date: 2020-11-26 17:21:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -340,7 +340,7 @@ msgstr "Configurer"
 
 #: modules/wizard/view-wizard-step-untranslated-contents.php:24
 msgid "Choose the language to be assigned"
-msgstr "Choisissez la langue à assigner"
+msgstr "Choisir la langue à assigner"
 
 #: modules/wizard/view-wizard-step-untranslated-contents.php:21
 msgid "The selected language below will be applied to all your content without an assigned language."
@@ -633,7 +633,7 @@ msgstr "Veuillez saisir une URL valide pour %s."
 
 #: settings/settings-url.php:32
 msgid "Decide how your URLs will look like."
-msgstr "Choisissez l’apparence de vos adresses web."
+msgstr "Déterminez l’apparence de vos URL."
 
 #: settings/settings-module.php:137
 msgid "Deactivated"
@@ -937,7 +937,7 @@ msgstr "Porto Rico"
 
 #: settings/flags.php:197
 msgid "Pitcairn"
-msgstr "Pitcairn"
+msgstr "Îles Pitcairn"
 
 #: settings/flags.php:196
 msgid "Saint Pierre and Miquelon"
@@ -1445,7 +1445,7 @@ msgstr "Île Christmas"
 
 #: settings/flags.php:69
 msgid "Cape Verde"
-msgstr "Cap Vert"
+msgstr "Cap-Vert"
 
 #: settings/flags.php:68
 msgid "Cuba"
@@ -1699,7 +1699,7 @@ msgstr "Modifier cet élément en %s"
 
 #. Description of the plugin
 msgid "Adds multilingual capability to WordPress"
-msgstr "Permet une utilisation multilingue de WordPress"
+msgstr "Ajoute la gestion multilingue à WordPress"
 
 #. Plugin Name of the plugin
 msgid "Polylang"
@@ -1807,7 +1807,7 @@ msgstr "Activer Lingotek"
 
 #: modules/lingotek/lingotek.php:40
 msgid "Click on Activate Lingotek to start translating."
-msgstr "Cliquez sur « Activer Lingotek » pour lancer la traduction."
+msgstr "Cliquez sur « Activer Lingotek » pour lancer la traduction."
 
 #: modules/lingotek/lingotek.php:36
 msgid "Learn more"
@@ -1919,7 +1919,7 @@ msgstr "Activer la gestion des langues et des traductions pour les médias."
 #: settings/settings-media.php:31 modules/wizard/view-wizard-step-media.php:21
 #: modules/wizard/wizard.php:565
 msgid "Media"
-msgstr "Médias"
+msgstr "Média"
 
 #: settings/settings-browser.php:33
 msgid "When the front page is visited, set the language according to the browser preference"
@@ -2036,7 +2036,7 @@ msgstr "Le nom est utilisé un peu partout sur le site (par exemple : Français
 
 #: settings/view-tab-lang.php:73
 msgid "You can choose a language in the list or directly edit it below."
-msgstr "Choisissez une langue dans la liste ou modifiez-la directement ci-dessous."
+msgstr "Choisir une langue dans la liste ou la modifier directement ci-dessous."
 
 #: include/widget-languages.php:51 settings/view-tab-lang.php:53
 msgid "Choose a language"
@@ -2059,7 +2059,7 @@ msgstr "Polylang est fourni avec une %1$sdocumentation%2$s (en anglais). Elle in
 
 #: settings/table-string.php:335
 msgid "Filter"
-msgstr "Filtre"
+msgstr "Filtrer"
 
 #: settings/table-string.php:322
 msgid "View all groups"
@@ -2149,7 +2149,7 @@ msgstr "Autorisation des pings"
 
 #: modules/sync/settings-sync.php:103
 msgid "Comment status"
-msgstr "Autorisation des commentaires"
+msgstr "État du commentaire"
 
 #: modules/sync/settings-sync.php:102
 msgid "Custom fields"

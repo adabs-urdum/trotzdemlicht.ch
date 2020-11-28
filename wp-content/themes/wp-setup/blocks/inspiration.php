@@ -4,15 +4,35 @@
   $intro = get_field('intro');
   $links = get_field('links');
   $imgTxtCombo = get_field('imgTxtCombo');
+  $showVideoPlaceholder = get_field('showVideoPlaceholder');
+  $img = get_field('placeholderImage');
+  $caption = $img['caption'];
+  $src = $img['sizes']['L'];
+  $srcset = wp_get_attachment_image_srcset($img['ID']);
+  $alt = $img['alt'] ? $img['alt'] : $img['name'];
+  $imgTitle = $img['title'] ? $img['title'] : $img['name'];
+  $srcset = wp_get_attachment_image_srcset($img['ID']);
+  $placeholderText = get_field('placeholderText');
 ?>
 
 <section id="inspiration" class="inspiration">
 
   <?php if($showVideo): ?>
     <div class="inspiration__videoWrapper">
-      <div class="inspiration__video">
+      <div id="video" class="inspiration__video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $videoID ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <canvas width="16" height="9"></canvas>
+      </div>
+    </div>
+  <?php endif; ?>
+
+  <?php if($showVideoPlaceholder): ?>
+    <div class="inspiration__videoWrapper">
+      <div class="inspiration__videoPlaceholder">
+        <div class="inspiration__imageWrapper">
+          <img class="inspiration__image" loading="lazy" src="<?= $src ?>" title="<?= $imgTitle ?>" alt="<?= $alt ?>" srcset="<?= $srcset ?>" sizes="">
+          <p class="inspiration__text"><?= $placeholderText ?></p>
+        </div>
       </div>
     </div>
   <?php endif; ?>

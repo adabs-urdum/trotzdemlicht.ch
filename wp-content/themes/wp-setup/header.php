@@ -40,6 +40,10 @@ ga('create', 'G-7V0DG6MZWE', 'auto');
       <div class="header__navLink">
         <a href="#otherxmas" class="header__anchor"><?= pll__('Einfach anders') ?></a>
       </div>
+      <div class="header__navLink header__navLink--preview">
+        <p class="header__previewText">Premiere am 3.12.20</p>
+        <a href="#video" class="header__anchor"><?= pll__('Video') ?></a>
+      </div>
       <div class="header__logoWrapper">
         <h1 class="header__logo"><?= pll__('Trotzdem') ?><br /><?= pll__('Licht') ?></h1>
       </div>
